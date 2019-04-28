@@ -1,0 +1,215 @@
+April 27th, 2019. Alpha 9.1. Changes:
+
+	1. fixed Shuma tentacles movements. The other clothes? seems okay, perhaps was just my illusion that they move funny.
+	
+	2. reworked the fix for the input window after a dash (or other moves). Because it caused some other issues, like the super jump being hard to execute.
+	
+	3. removed the command component timeout "fix" since it seems not correct.
+	
+	4. Known issue: Minor, the absence of returning ironhand rope and the absence of the "static" spark DHC'ing into ironman's hyper.
+
+April 20th, 2019. Alpha 9.1. Changes:
+
+	1. remove the 8ms hittee move delay since it is not necessary and not implemented correctly: causing retrigger of LMH events when hold them down for characters like Vergil.
+	
+	2. everything else remains the same.
+
+April 16th, 2019. Alpha 9. Changes:
+
+	1. Fix the timeout of command components. Previously it is 8ms too long to cache a command recognition state. For example, with forward direction input and a hadogen follow, it was more likely to get a shoryugen previously.
+	
+	2. Fix the effecting frame of a cached command, like a HP right after a dash. Previously it took effect 8ms too early. This is a big improvement on the resemblance of the "feeling". Note this may not be perfect yet.
+	
+	3. Removed some input caching time shortening fixes done before, since they are likely not correct, especially with the fix 2 implemented here.
+	
+	4. The correct fix of the projectile disappearance after DHC: it is actually a bug introduced in previous fixes for project trails.
+	
+	5. Known issue: Minor, the absence of returning ironhand rope and the absence of the "static" spark DHC'ing into ironman's hyper.
+	
+	6. Known issue: just realized that soft materials like clothes or Shuma's tentacles don't sway correctly, but like softer or something. Those may be some low level objects that don't affect the real physical simulation of the game world. Need to learn a lot to know the thing.
+
+Dec. 23th. Alpha 8.2. Changes:
+
+	1. Fixed some time-freezing caused abnormal state of projectiles/charactors---only known case is the disappearance of Dante's hyper after DHC out.
+
+	2. Re-applied the visual effects delay removed from 8.0---this is the right thing to do. The artifacts introduced are fixed this way.
+
+	3. Known issue: with "fix" 2, comes back the absence of ironhand rope (when come back) and the spark effect of ironman DHC in hyper.---but this is very minor and need further thinking.
+	
+	4. Known issue: the throwing hyper of Haggar make opposite floating a bit, after the whole execution.
+
+Nov. 25th. Alpha 8.1. Changes:
+
+	1. Fixed position speed and acceleration manipulated by Magneto's attraction/repulsion.
+
+	2. Known issues: those of aplpha 8, mainly visual effect glitches. Also found a new effect glitch where the last hit visual effect of Dante's hyper disappears when DHC out (but the hit effect is still there).
+
+Nov. 11th. Alpha 8. Changes:
+
+	1. Delay the hittee moves (hitstun or block) by 8ms (again, did in alpha 2 but removed in 3), as I always suspect that I should. This helps the below effects fix too.
+
+	2. Remove the 8ms delay in effects, so the ironhand return animation and HDC-into-ironman-spark can be fixed.
+	
+	3. Known issue: the wind effect of Morrigan's air S has a little artifact. Introduced by fix 2 here. This is a issue since day one before I delay the effects. display---but again the delay may not be right, and the artifact is trivial and will be fixed more correct
+
+	6. Known Issue: still not 100% sure about some very subtle timings.
+
+Nov. 5th. Alpha 7.6. Changes:
+
+	1. fixed smartbomb trail for good.
+
+	2. also reworked lowvoltage fix with a correct one.
+	
+	3. fixed Arthor's cross sword. But this one may not be perfect yet.
+
+	5. Known Issue: the effect first frmae display issue. With ironhand rope when return, and ironman's DHC hit spark.
+	
+	6. Known Issue: still suspect that some very subtle (8ms) shift in things like the effect startup (like mentioned above), events along a move (like hit effects startup, or a special input effecting), being-hit-move startup...
+	   Need to analyze these more closely and bump the mod to "beta".
+
+Oct. 28th. Alpha 7.5. Changes:
+
+	1. Reverted the smartbomb trail fix in 7.4 since it actually breaks other parabola projectiles and Dante's missle. Need further analysis on this.
+	
+	2. Otherwise identical to 7.4.
+
+Oct. 14th. Alpha 7.4. Changes:
+
+	1. Further fixed a character horizontal acceleration issue in 120fps mode, which is most noticiable in some Task Master moves.
+	
+	2. Fixed the smartbomb trail. Not sure if it is the perfect fix though, later there may be better fixes for all projectiles.
+	
+	3. Known issue: the effect first frmae display issue (ironhand rope when return, and ironman's DHC hit spark). Not sure if I should just remove the effect delay to fix them.
+	
+	4. Know issue: not sure if I should adjust hitstub moves' timing and hit freeze timing a little.
+
+Aug. 19th. Alpha 7.3. Changes:
+
+	1. Shorten hit freeze (the time freeze on contact of a body based move) by 16ms as it should. This makes the "feel" closer to original game.
+	
+	2. Known Issue (minor): when spencer's ironhand returns in grapple, the string (which is just an effect) doesn't show.
+	
+	3. Known Issue: when DHC into ironman's 236 hyper, the first phisical hit of the cannon works, but no spark effect.
+	
+	4. Known Issue: Ironman's smartbomb trail is not correct (moves too near horizontally). This is similar to Trish lowvoltage before fix.
+	
+	5. Known Issue (possible): sometimes I feel I cancel things too fast, like the S cancelling of the Viper's TK, or actions after Dante's AirPlay (not really cancel). But there is no real evidence, could be just my skill.
+	
+	6. Known Issue (possible): Sometimes I feel some input after some action (like landing after some air punches) are ignored, perhaps some input windows misalignment, but very rare and nor real clear case for this. Could still be me.
+	
+
+Aug. 4th. Alpha 7.2. Changes:
+
+	1. Fixed some other similar "return back" projectiles, like the shield of Captain America. No other change since alpha 7.1.
+
+Aug. 2nd. Alpha 7.1. Changes:
+
+	1. Fixed the strange behaviours of Spencer's grapple. The issue was caused by the homing back (to Spencer's arm) logic shared with Dante's missle homing logic, while the grapple is a little different from missle because it flys backward when return.
+	
+	2. Known issues: the possible ones from alpha 7. Not confirmed and not investigated yet.
+
+	3. Known issue (minor): when spencer's ironhand returns in grapple, the string (which is just an effect) doesn't show. This is just a very minor visual-only error, and caused by a 8ms delay in effect show (plus the fact that every frame the string effect is deleted and re-created). This is not fixed because I think the 8ms delay is correct. Will figure out the best way to fix this.
+
+July 18th. Alpha 7. Changes:
+
+	1. Same as alpha 6o, just no "change 4" and "known issue 8".
+	
+	2. Known Issue: my fried think the floating action like super jump is a little strange. I think it comes from all the extra smoothness. But still will profile all the charactor movements some more.
+	
+	3. Known Issue: Phoenix H fireball may be too aggressive on homing. And again all the projectile trail things are not 100% identical to original, may need rework.
+	
+	4. Known Issue: (found around July 21st, by u/Viet_Champ, ) Spencer's grapple is really buggy: doesn't come back as it should in most cases.
+
+July 15th. BUGGY: Alpha "6o" (o for "original event processing"). Changes:
+
+	1. Fixed some more projectile acceleration. Also Dante's beehive animation speed looks normal too (perhaps beehive effects are actually projectile objects).
+
+	2. Fixed Raikousen startup time point. Raikousen should have been fully fixed togather with fix 1.
+
+	3. Fixed a charactor horizontal acceleration issue, mainly about Pheonix' TK overdrive.
+
+	4. ***This revision moved to a 60fps-based-event-processing policy (while keeping the 120fps animation), to precisely mimic all the subtle timing things, like the falling to ground recover timing (120fps processing may be 8ms earlier).
+	   But I feel this may not be fully necessary. Perhaps later I will maintain 2 branches.
+
+	5. Fixed the 60hz refresh rate when switching to full screen.
+	
+	6. Fixed a Morrigan Shadow Blade startup timing issue.
+
+	7. Known Issues: not many but potential issues. Of course networking is still not tried at all.
+	
+	8. Known Issues(July 18): Vergil forward throw is broken; most hit effect MAY start 8ms too late, not sure; possible glitch in VS mode rematch beginning scene.
+	
+	*** So the 60fps-based(or original) event processing is still buggy. So I renamed this revision to "a6o", and mark it "buggy".
+
+July 4th. Alhpa 5. Changes:
+
+	1. Fixed the input window for "cold shower extra H" and alikes.
+	
+	2. Some other small input cache period fixes.
+	
+	3. Known Issue: all the alpha 3 known issues. Looks not many and not major now.
+	
+	4. July 5th update: Zero's Raikousen hit effect still is slower by 8ms, so the "buster lv3"->Raikousen combo still may not connect in some situations.
+
+July 3rd. Alpha 4 released. Changes:
+
+	1. Fixed a "input being cached for 8ms too long" issue. (the Magneto-dash-down-trigger-a-punch case)
+	
+	2. Fixed a "Zero clone missing status randomly during the status rolling over from the master" issue in 120fps.
+	
+	3. Known Issue: About the extra move of Dante's cold shower, which is triggered by a extra H: The input window for the extra H may open a little too late. (all the above 3 cases are contributed by u/Viet_Champ)
+	
+	4. All the known issues from alpha 3.
+
+July 1st. Alpha 3 released. Changes:
+
+	1. Fixed all the "charactor location moving logics" with speed acceleration, especially the Parabola movements (where the gravity approximation has a subtle problem in finer time advancing granularity). Thanks u/Viet_Champ @reddit for providing a case for me to analyse.
+	
+	2. Fixed some late (by 8-16 ms) finish on some moves, especially the on-the-ground hitstuns.
+	
+	With the above 2 fixes and some frame-by-frame profiling, I feel there should be no difference at all from the original verion in all the character-BODY-Based moves.
+	
+	3. Removed a timing "fix" in alpha 2. Since I found it neither necessary nor corrent at all.
+	
+	4. Fixed Morrigan and Dante's missiles. NOTE the fixed projectiles' movements may not be frame-by-frame identical to the original, since they have speed acceleration too, but I just used some close-enough fixes for them where I feel frame-by-frame alignment is not that important there.
+	
+	5. Known Issue: Dante's beehive animation may feel slower (thanks again to u/Viet_Champ for reminding me). I profiled the move, and it takes the same length in time. Perhaps it is the way the effects (lighting legs) appear and fade in slower. But not that urgent a issue for now...
+	
+	6. Known Issue: Networking is still not tested at all.
+	
+	7. Known Issue: Just found when switching from window mode to full screen, the refresh rate may not be set properly but to 60hz. This can be work around of course by setting->quitting->restarting the program.
+	
+
+June 19th. Alpha 2 released. Changes:
+
+    1. Fixed a generic hitter/hittee timings misalignment, where the hittee's action was 1 frame (8ms frame) faster compare to the 60fps version. This should improved the identicality-to-original a lot.
+    
+       In throwing situation, the throwing/thrown parties' actions are both delayed by 1 8ms frame to mimic the 60fps version.
+	   
+	   JULY 1st note: the "fix" turns out to be wrong and useless. removed in alpha 3.
+    
+    2. Fixed the course of some special projectiles like the M/H version of Trish's low voltage.
+    
+    3. Known Issue: the missiles' (Morrigan's super, Dante's missiles, etc) course is still not fixed (changing direction a little too fast).
+    
+    4. Known Issue: Networking part is still not tested at all.
+    
+    Also: not feeling it but there may still be timing issues.
+
+June 9th(?). Alpha 1. Status:
+
+    1. should be stable, but no guarantee.
+    
+    2. most moves should have their timings (like when hitbox happens, when cancel window happens, etc) aligned correctly.
+    
+    3. the hitbox contact test runs on 120fps basis, so some hit contact can be very subtly different, if at all.
+    
+    4. known: Trish's low voltage (M/H) beams splits less open. Must be some algorithm reach its limit prematurely in the special effect.
+    
+    5. known: use Doom's standing H to OTG the opponent, and use S to cancel after the first hit of H, it is less possible to connect. Since Doom's S really hit with special effect, it still may be about special effect again.
+    
+    6. known: with Morrigan's missile super, the missiles can be controlled more quickly to their extreme direction.
+    
+    7. There can be other small bugs that I didn't find yet.
+    
+    8. The online modes are not tested at all. Likely they won't work very good.
