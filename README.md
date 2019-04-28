@@ -22,7 +22,10 @@ Then you can download the zipped file (umvc3-120.zip here), put the unzipped con
 Then just run the program (with steam up and logged in) to enjoy the smoothness.
 
 ## files description
-bin/umvc3-120.zip          the current binaries
-src/umvc3-120.1337         the patch "source" made/used with x64dbg
-src/umvc3.7z               the "ida pro 7 free" database, with comments/function-namings. It is incomplete (of course not every instruction is analyzed) and some comments can be misleading since they were done at different time. Also it may not be always up-to-date.
-Old\_Revision\_history.txt   the revision-history of before put in github
+binumvc3-120.zip           : the current binaries
+
+src/umvc3-120.1337         : the patch "source" made/used with x64dbg
+
+src/umvc3.7z               : the "ida pro 7 free" database, with comments/function-namings. It is incomplete (of course not every instruction is analyzed) and some comments can be misleading since they were done at different time. Also it may not be always up-to-date.
+
+Old\_Revision\_history.txt   : the revision-history of before put in github
