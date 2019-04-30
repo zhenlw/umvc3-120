@@ -1,7 +1,7 @@
 # umvc3-120
 a Ultimate Marvel vs Capcom 3 mod for 120fps game content
 
-I have been worked on this mod now and then (on my own time) for like 1 year, and hosted the files previously here: https://1drv.ms/f/s!AgheTV2uw-epkmrrniIRP1jfs7Lb. But decided recently to move to github for better version info.
+I have been worked on this mod now and then in my spare time for like 1 year, and hosted the files previously here: https://1drv.ms/f/s!AgheTV2uw-epkmrrniIRP1jfs7Lb. But decided recently to move to github for better version info.
 
 ## what it is
 It is a mod (current just a patched main program) to run the game (Ultimate Marvel vs Capcom 3) at 120fps, rather than the original 60fps.
@@ -15,14 +15,14 @@ The benefits of 120fps content are:
 3. a little less input lag, perhaps.
 
 ## how to use
-First you need a 120hz monitor, a powerful enough PC (actually an intel i3 + an old gtx750 are enough for 1080p play), and of course a steam account with the UMVC3 game purchased.
+First you need a 120hz monitor, a powerful enough PC (actually an intel i3 + an old gtx750 are enough for 1080p play), and of course a steam account with the UMVC3 game purchased and installed.
 
-Then you can download the zipped file (umvc3-120.zip here), put the unzipped content in the umvc3.exe installation location, which normally is "C:\Program Files (x86)\Steam\steamapps\common\ULTIMATE MARVEL VS. CAPCOM 3".
+Then you can download the zipped file (umvc3-120.zip here), put the unzipped content in the umvc3.exe installation location, which normally is "C:\Program Files (x86)\Steam\steamapps\common\ULTIMATE MARVEL VS. CAPCOM 3". (It won't replace any file, but put an extra patched program, usually named umvc3-120.exe)
 
-Then just run the program (with steam up and logged in) to enjoy the smoothness.
+Then just run the patched program (with steam up and logged in) to enjoy the smoothness.
 
 ## files description
-binumvc3-120.zip           : the current binaries.
+bin/umvc3-120.zip           : the current binaries.
 
 src/umvc3-120.1337         : the patch "source" made/used with x64dbg.
 
